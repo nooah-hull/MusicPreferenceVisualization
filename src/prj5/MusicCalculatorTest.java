@@ -221,4 +221,7 @@ public class MusicCalculatorTest extends TestCase {
         assertEquals(mc.caseFinder("test1"), 0);
     }
 
+    /**
+     * 
+     */
 }

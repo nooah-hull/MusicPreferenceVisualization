@@ -28,7 +28,7 @@ public class SongTest extends TestCase {
 
 
     /**
-     * sets up the tests
+     * Sets up the tests
      */
     public void setUp() {
         song = new Song("Enter Sandman", "Metallica", 1991, "Rock", 0);
@@ -43,7 +43,7 @@ public class SongTest extends TestCase {
 
 
     /**
-     * tests the getters
+     * Tests the getters
      */
     public void testGetters() {
         assertEquals("Enter Sandman", song.getSong());
@@ -55,7 +55,7 @@ public class SongTest extends TestCase {
 
 
     /**
-     * tests the toString method
+     * Tests the toString method
      */
     public void testToString() {
         assertEquals("Song Title: Enter Sandman\r\n"
@@ -65,7 +65,7 @@ public class SongTest extends TestCase {
 
 
     /**
-     * tests the equals method
+     * Tests the equals method
      */
     public void testEquals() {
         assertEquals(song, song);
@@ -96,7 +96,7 @@ public class SongTest extends TestCase {
 
 
     /**
-     * tests the compareTo method
+     * Tests the compareTo method
      */
     public void testCompareTo() {
 
