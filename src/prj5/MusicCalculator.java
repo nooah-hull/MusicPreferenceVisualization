@@ -144,7 +144,6 @@ public class MusicCalculator {
                     break;
                 }
                 case 3: {
-
                     if (!(student.getPreferences()[s.getIndex() * 2]).equals(
                         "")) {
                         sportsCountHeard++;
