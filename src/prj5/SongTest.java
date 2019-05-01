@@ -50,7 +50,6 @@ public class SongTest extends TestCase {
         assertEquals("Metallica", song.getArtist());
         assertEquals(1991, song.getYear());
         assertEquals("Rock", song.getGenre());
-        assertEquals(0, song.getIndex());
     }
 
 
