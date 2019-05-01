@@ -116,11 +116,21 @@ public class MusicReader {
     }
 
 
+    /**
+     * returns the DList<Song>
+     * 
+     * @return the DList of songs
+     */
     public DList<Song> getSongs() {
         return songs;
     }
 
 
+    /**
+     * returns the array list of students
+     * 
+     * @return the array list of students
+     */
     public ArrayList<Student> getStudents() {
         return students;
     }

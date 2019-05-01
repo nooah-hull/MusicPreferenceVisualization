@@ -64,11 +64,12 @@ public class MusicCalculator {
 
 
     /**
-     * returns a string of the hobby representation of songs
+     * returns an int array for percents for a given attribute
+     * e.g. "major, hobby, region"
      * 
      * @param s
      *            the song being asked about
-     * @return a string of the hobby representation of songs
+     * @return the attribute we are looking to search for
      */
     public int[] getPercents(Song s, String attribute) {
         int readHeard = 0;
@@ -191,33 +192,41 @@ public class MusicCalculator {
         int[] percents = new int[8];
 
         if (readCountHeard != 0) {
-            percents[0] = (int) (readHeard * 100.0 / readCountHeard);
+            percents[0] = (int)(readHeard * 100.0 / readCountHeard);
         }
         if (artCountHeard != 0) {
-            percents[1] = (int) (artHeard * 100.0 / artCountHeard);
+            percents[1] = (int)(artHeard * 100.0 / artCountHeard);
         }
         if (sportsCountHeard != 0) {
-            percents[2] = (int) (sportsHeard * 100.0 / sportsCountHeard);
+            percents[2] = (int)(sportsHeard * 100.0 / sportsCountHeard);
         }
         if (musicCountHeard != 0) {
-            percents[3] = (int) (musicHeard * 100.0 / musicCountHeard);
+            percents[3] = (int)(musicHeard * 100.0 / musicCountHeard);
         }
         if (readCountLiked != 0) {
-            percents[4] = (int) (readLiked * 100.0 / readCountLiked);
+            percents[4] = (int)(readLiked * 100.0 / readCountLiked);
         }
         if (artCountLiked != 0) {
-            percents[5] = (int) (artLiked * 100.0 / artCountLiked);
+            percents[5] = (int)(artLiked * 100.0 / artCountLiked);
         }
         if (sportsCountLiked != 0) {
-            percents[6] = (int) (sportsLiked * 100.0 / sportsCountLiked);
+            percents[6] = (int)(sportsLiked * 100.0 / sportsCountLiked);
         }
         if (musicCountLiked != 0) {
-            percents[7] = (int) (musicLiked * 100.0 / musicCountLiked);
+            percents[7] = (int)(musicLiked * 100.0 / musicCountLiked);
         }
         return percents;
     }
 
 
+    /**
+     * returns an int for the case based on the enum of the student's attribute
+     * 
+     * @param caseIn
+     *            the attribute we want to fidn the case for
+     * @return an int saying if it is the first, second, or third hobby, major,
+     *         or region enum
+     */
     public int caseFinder(Object caseIn) {
         if (caseIn == HobbyEnum.READ || caseIn == MajorEnum.COMPUTERSCIENCE
             || caseIn == StateEnum.NORTHEASTUS) {
@@ -240,56 +249,6 @@ public class MusicCalculator {
         }
 
         return 0;
-    }
-
-
-    /**
-     * a hobby representation based on given parameters
-     * 
-     * @param reading
-     *            the ratio of people with reading who have heard it
-     * @param reading2
-     *            the ratio of reading people who like it and have heard it
-     * @param art
-     *            the ratio of people with art who have heard it
-     * @param art2
-     *            the ratio of art people who like it and have heard it
-     * @param sports
-     *            the ratio of people with sports who have heard it
-     * @param sports2
-     *            the ratio of sports people who like it and have heard it
-     * @param music
-     *            the ratio of people with music who have heard it
-     * @param music2
-     *            the ratio of music people who like it and have heard it
-     * @return a string hobby representation based on given parameters
-     */
-    public String getPercentsString(Song s, String attribute) {
-        int[] temp = getPercents(s, attribute);
-        StringBuilder bld = new StringBuilder();
-        bld.append("heard\n");
-        bld.append("reading:" + temp[0]);
-        bld.append(" art:" + temp[2]);
-        bld.append(" sports:" + temp[4]);
-        bld.append(" music:" + temp[6] + "\n");
-        bld.append("likes\n");
-        bld.append("reading:" + temp[1]);
-        bld.append(" art:" + temp[3]);
-        bld.append(" sports:" + temp[5]);
-        bld.append(" music:" + temp[7]);
-        return s.toString() + "\n";
-    }
-
-
-    /**
-     * makes an output of all the songs and the representations of them for
-     * hobbies
-     */
-    public void makeHobbyOutput() {
-        for (int i = 0; i < songs.size(); i++) {
-            System.out.println(songs.get(i).toString());
-            System.out.println(getPercentsString(songs.get(i), "hobby"));
-        }
     }
 
 

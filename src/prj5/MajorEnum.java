@@ -6,7 +6,7 @@ package prj5;
 //do.
 //-- Brock Morgan (brockmorgan)
 /**
- * A enum class for the student majors
+ * An enum class for the student majors
  * @author <Brock Morgan> <brockmorgan>
  * @version <04/15/2019>
  *

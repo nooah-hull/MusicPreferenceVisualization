@@ -92,7 +92,6 @@ public class MusicCalculatorTest extends TestCase {
      * tests the songHobbies() method
      */
     public void testSongHobbies() {
-        mc.makeHobbyOutput();
         
         Exception e = null;
         try {
