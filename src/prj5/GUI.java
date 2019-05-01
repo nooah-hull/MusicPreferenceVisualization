@@ -130,7 +130,9 @@ public class GUI {
 
 
     /**
-     * 
+     * Enables previous and next buttons, then checks if they are clickable
+     * (i.e. there are 9 elements in front/behind the current position) and
+     * disables them if not
      */
     public void checkButtons() {
         prev.enable();
@@ -156,8 +158,10 @@ public class GUI {
 
 
     /**
+     * Moves the node backwards
      * 
      * @param additional
+     *            The extra amount to backtrack by
      */
     private void currNodeBacktrack(int additional) {
         for (int i = 0; i < glyphTracker + additional; i++) {
@@ -167,7 +171,7 @@ public class GUI {
 
 
     /**
-     * runs when previous is clicked
+     * Runs when previous is clicked
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -179,7 +183,7 @@ public class GUI {
 
 
     /**
-     * runs when Sort Artist is pressed
+     * Runs when Sort Artist is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -192,7 +196,7 @@ public class GUI {
 
 
     /**
-     * runs when Sort Title is presssed
+     * Runs when Sort Title is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -205,7 +209,7 @@ public class GUI {
 
 
     /**
-     * runs when Sort Year is pressed
+     * Runs when Sort Year is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -218,7 +222,7 @@ public class GUI {
 
 
     /**
-     * runs when sort genre is pressed
+     * Runs when sort genre is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -231,7 +235,7 @@ public class GUI {
 
 
     /**
-     * runs when next is pressed
+     * Runs when next is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -242,7 +246,7 @@ public class GUI {
 
 
     /**
-     * runs when represent by hobby is pressed
+     * Runs when represent by hobby is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -255,7 +259,7 @@ public class GUI {
 
 
     /**
-     * runs when represent by major is pressed
+     * Runs when represent by major is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -268,7 +272,7 @@ public class GUI {
 
 
     /**
-     * runs when represent by region is pressed
+     * Runs when represent by region is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -281,7 +285,7 @@ public class GUI {
 
 
     /**
-     * 
+     * Resets the window, barX, and songY values
      */
     public void resetWindow() {
         window.removeAllShapes();
@@ -291,7 +295,8 @@ public class GUI {
 
 
     /**
-     * 
+     * Runs the resetWindow function reset the window, and updates the glyphs
+     * and legends
      */
     public void standardRefresh() {
         resetWindow();
@@ -301,7 +306,7 @@ public class GUI {
 
 
     /**
-     * runs when quit is pressed
+     * Runs when quit is pressed
      * 
      * @param buttonIn
      *            - the button that is pressed
@@ -312,6 +317,8 @@ public class GUI {
 
 
     /**
+     * Initializes glyphTracker, and creates the page of glyphs based on
+     * attribute (hobby, state, or major)
      * 
      * @param attribute
      */
@@ -326,8 +333,9 @@ public class GUI {
 
 
     /**
+     * Checks if and where the glyph can be added to the page
      * 
-     * @return
+     * @return boolean False if it can't be added, true otherwise
      */
     public boolean checkGlyph() {
         if (barX + 250 > window.getWidth() && songY + 250 + 180 > window
@@ -345,7 +353,7 @@ public class GUI {
 
 
     /**
-     * generates a glyph of musical preferences for a song
+     * Generates a glyph of musical preferences for a song
      */
     public void createGlyph(Song songIn, String attribute) {
 
@@ -378,7 +386,7 @@ public class GUI {
 
 
     /**
-     * updates the legend of the window
+     * Updates the legend of the window
      */
     public void updateLegend(String attribute) {
         // adds the top bar of the legend and assigns it to a reference
