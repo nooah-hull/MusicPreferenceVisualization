@@ -21,7 +21,7 @@ public class MusicCalculator {
 
 
     /**
-     * makes a music calculator object from a DList of songs and an array of
+     * Makes a music calculator object from a DList of songs and an array of
      * students
      * 
      * @param arrayList
@@ -39,7 +39,7 @@ public class MusicCalculator {
 
 
     /**
-     * sorts the songs based on a given parameter such as year, genre, artist
+     * Sorts the songs based on a given parameter such as year, genre, artist
      * 
      * @param cat
      *            the parameter to sort by
@@ -64,7 +64,7 @@ public class MusicCalculator {
 
 
     /**
-     * returns an int array for percents for a given attribute
+     * Returns an int array for percents for a given attribute
      * e.g. "major, hobby, region"
      * 
      * @param s
@@ -216,10 +216,10 @@ public class MusicCalculator {
 
 
     /**
-     * returns an int for the case based on the enum of the student's attribute
+     * Returns an int for the case based on the enum of the student's attribute
      * 
      * @param caseIn
-     *            the attribute we want to fidn the case for
+     *            the attribute we want to find the case for
      * @return an int saying if it is the first, second, or third hobby, major,
      *         or region enum
      */
@@ -249,6 +249,8 @@ public class MusicCalculator {
 
 
     /**
+     * Returns the list of songs
+     * 
      * @return the DList of songs
      */
     public DList<Song> getSongs() {
