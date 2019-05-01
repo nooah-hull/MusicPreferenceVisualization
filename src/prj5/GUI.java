@@ -129,6 +129,9 @@ public class GUI {
         checkButtons();
     }
 
+    /**
+     * 
+     */
     public void checkButtons() {
         prev.enable();
         next.enable();
@@ -151,11 +154,16 @@ public class GUI {
         }
     }
     
+    /**
+     * 
+     * @param additional
+     */
     private void currNodeBacktrack(int additional) {
         for (int i = 0; i < glyphTracker + additional; i++) {
             currNode = currNode.previous();
         }
     }
+    
     /**
      * runs when previous is clicked
      * 
@@ -269,13 +277,18 @@ public class GUI {
         standardRefresh();
     }
     
-    
+    /**
+     * 
+     */
     public void resetWindow() {
         window.removeAllShapes();
         barX = 150;
         songY = 20;
     }
     
+    /**
+     * 
+     */
     public void standardRefresh() {
         resetWindow();
         createGlyphPage(curRep);
@@ -292,7 +305,10 @@ public class GUI {
         System.exit(0);
     }
 
-
+    /**
+     * 
+     * @param attribute
+     */
     public void createGlyphPage(String attribute) {
         glyphTracker = 0;
         checkButtons();
@@ -302,7 +318,10 @@ public class GUI {
         }
     }
 
-
+    /**
+     * 
+     * @return
+     */
     public boolean checkGlyph() {
         if (barX + 250 > window.getWidth() && songY + 250 + 180 > window
             .getHeight()) {

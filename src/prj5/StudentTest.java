@@ -11,7 +11,7 @@ package prj5;
 import student.TestCase;
 
 /**
- * tests the methods of Student
+ * Tests the methods of Student
  *
  * @author Jacob Drimer PID:Jackman99
  * @version 04/15/2019

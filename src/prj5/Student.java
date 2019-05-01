@@ -10,7 +10,7 @@ package prj5;
  */
 
 /**
- * Creates a student object with preferences and attributes
+ * Creates a Student object with preferences and attributes
  *
  * @author Jacob Drimer PID:Jackman99
  * @version 04/15/2019
