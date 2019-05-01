@@ -246,6 +246,16 @@ public class MusicCalculatorTest extends TestCase {
             assertEquals(testHobby[i], x[i]);
         }
     }
+    
+    /**
+     * tests the getPercentswhen it should be whack
+     */
+    public void testGetPercentsWhack() {
+        int[] x = mc.getPercents(mc.getSongs().get(0), "daddy barnette");
+        for (int i = 0; i < 8; i++) {
+            assertEquals(0, x[i]);
+        }
+    }
 
 
     /**
