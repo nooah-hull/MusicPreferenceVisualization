@@ -218,6 +218,7 @@ public class MusicCalculatorTest extends TestCase {
         assertEquals(mc.caseFinder(StateEnum.OTHER), 4);
         
         assertEquals(mc.caseFinder(1), 0);
+        assertEquals(mc.caseFinder("hello"), 0);
     }
 
 }
