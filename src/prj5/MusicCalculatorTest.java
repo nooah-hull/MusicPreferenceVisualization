@@ -87,7 +87,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the songHobbies() method
+     * Tests the songHobbies() method
      */
     public void testSongHobbies() {
 
@@ -103,7 +103,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests sorting by year
+     * Tests sorting by year
      */
     public void testSortByYear() {
         mc.sort("year");
@@ -124,7 +124,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests sorting by genre
+     * Tests sorting by genre
      */
     public void testSortByGenre() {
         mc.sort("genre");
@@ -139,7 +139,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests sorting by genre
+     * Tests sorting by artist
      */
     public void testSortByArtist() {
         mc.sort("artist");
@@ -158,7 +158,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests sorting by genre
+     * Tests sorting by title
      */
     public void testSortByTitle() {
         mc.sort("title");
@@ -179,7 +179,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the music calculators getPercents method with major
+     * Tests the music calculators getPercents method with major
      * 
      * @throws FileNotFoundException
      *             if file not found
@@ -205,7 +205,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the music calculator getPercents method with region
+     * Tests the music calculator getPercents method with region
      * 
      * @throws FileNotFoundException
      *             if file not found
@@ -225,7 +225,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the music calculator getPercents method with hobby
+     * Tests the music calculator getPercents method with hobby
      * 
      * @throws FileNotFoundException
      *             if file not found
@@ -249,7 +249,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the getPercentswhen it should be whack
+     * Tests the getPercents when it should be whack
      */
     public void testGetPercentsWhack() {
         int[] x = mc.getPercents(mc.getSongs().get(0), "daddy barnette");
@@ -260,7 +260,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the getPercents using created students and preferences
+     * Tests the getPercents using created students and preferences
      * 
      * @throws FileNotFoundException
      *             if file not found
@@ -335,7 +335,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests casefinder 0
+     * Tests caseFinder 0
      */
     public void testCaseFinder0() {
         assertEquals(0, mc.caseFinder("hello my dude"));
@@ -343,7 +343,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the music calculator with the music reader
+     * Tests the music calculator with the music reader
      * 
      * @throws FileNotFoundException
      *             if the file is not found
@@ -363,7 +363,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-     * tests the caseFinder Method
+     * Tests the caseFinder Method
      * 
      */
     public void testCaseFinder() {
