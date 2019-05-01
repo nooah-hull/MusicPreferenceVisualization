@@ -179,6 +179,158 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
+     * tests the music calculators getPercents method with major
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     */
+    public void testGetPercentsMajor() throws FileNotFoundException {
+        MusicReader mr = new MusicReader("MusicSurveyDataTest2.csv",
+            "SongListTest2.csv");
+        mc = new MusicCalculator(mr.getStudents(), mr.getSongs());
+        int[] x = mc.getPercents(mc.getSongs().get(0), "Major");
+        int[] testMajor = new int[8];
+        testMajor[0] = 33;
+        testMajor[1] = 0;
+        testMajor[2] = 33;
+        testMajor[3] = 0;
+        testMajor[4] = 66;
+        testMajor[5] = 0;
+        testMajor[6] = 33;
+        testMajor[7] = 0;
+        for (int i = 0; i < 8; i++) {
+            assertEquals(testMajor[i], x[i]);
+        }
+    }
+
+
+    /**
+     * tests the music calculator getPercents method with region
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     */
+    public void testGetPercentsRegion() throws FileNotFoundException {
+        MusicReader mr = new MusicReader("MusicSurveyDataTest2.csv",
+            "SongListTest2.csv");
+        mc = new MusicCalculator(mr.getStudents(), mr.getSongs());
+        int[] x = mc.getPercents(mc.getSongs().get(0), "Region");
+        int[] testRegion = new int[8];
+        testRegion[1] = 33;
+        testRegion[5] = 50;
+        for (int i = 0; i < 8; i++) {
+            assertEquals(testRegion[i], x[i]);
+        }
+    }
+
+
+    /**
+     * tests the music calculator getPercents method with hobby
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     */
+    public void testGetPercentsHobby() throws FileNotFoundException {
+        MusicReader mr = new MusicReader("MusicSurveyDataTest2.csv",
+            "SongListTest2.csv");
+        mc = new MusicCalculator(mr.getStudents(), mr.getSongs());
+        int[] x = mc.getPercents(mc.getSongs().get(0), "Hobby");
+        int[] testHobby = new int[8];
+        testHobby[0] = 0;
+        testHobby[2] = 50;
+        testHobby[3] = 0;
+        testHobby[4] = 0;
+        testHobby[6] = 50;
+        testHobby[7] = 100;
+        for (int i = 0; i < 8; i++) {
+            assertEquals(testHobby[i], x[i]);
+        }
+    }
+
+
+    /**
+     * tests the getPercents using created students and preferences
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     */
+    public void testGetPercentsMore() throws FileNotFoundException {
+        String[] preferences1 = new String[2];
+        String[] preferences2 = new String[2];
+        String[] preferences3 = new String[3];
+        String[] preferences4 = new String[4];
+
+        preferences1[0] = "yes";
+        preferences1[1] = "yes";
+
+        preferences2[0] = "yes";
+        preferences2[1] = "no";
+
+        preferences3[0] = "no";
+        preferences3[1] = "yes";
+
+        preferences4[0] = "no";
+        preferences4[1] = "no";
+
+        Student one = new Student("Other Engineering", "Southwest", "art",
+            preferences1);
+        Student two = new Student("Other",
+            "United States (other than Southeast or Northwest)", "sports",
+            preferences2);
+        Student three = new Student("Math or CMDA", "Outside of United States",
+            "art", preferences3);
+        Student four = new Student("Computer Science",
+            "Outside of United States", "sports", preferences4);
+
+        ArrayList<Student> testStudents = new ArrayList<Student>();
+        testStudents.add(one);
+        testStudents.add(two);
+        testStudents.add(three);
+        testStudents.add(four);
+        MusicReader mr = new MusicReader("MusicSurveyDataTest2.csv",
+            "SongListTest2.csv");
+        mc = new MusicCalculator(testStudents, mr.getSongs());
+
+        int[] test1 = new int[8];
+        int[] test2 = new int[8];
+        int[] test3 = new int[8];
+
+        test1[1] = 50;
+        test2[1] = 100;
+
+        test1[2] = 50;
+        test3[2] = 100;
+
+        test2[3] = 100;
+        test3[3] = 33;
+
+        test1[5] = 100;
+        test2[5] = 100;
+
+        test2[6] = 100;
+
+        test3[7] = 66;
+
+        int[] x = mc.getPercents(mc.getSongs().get(0), "Hobby");
+        int[] y = mc.getPercents(mc.getSongs().get(0), "Major");
+        int[] z = mc.getPercents(mc.getSongs().get(0), "Region");
+
+        for (int i = 0; i < 8; i++) {
+            assertEquals(x[i], test1[i]);
+            assertEquals(y[i], test2[i]);
+            assertEquals(z[i], test3[i]);
+        }
+    }
+    
+    /**
+     * tests casefinder 0
+     */
+    public void testCaseFinder0() {
+        assertEquals(0, mc.caseFinder("hello my dude"));
+    }
+
+
+    /**
      * tests the music calculator with the music reader
      * 
      * @throws FileNotFoundException
