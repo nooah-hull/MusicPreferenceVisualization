@@ -117,7 +117,7 @@ public class MusicReader {
 
 
     /**
-     * returns the DList<Song>
+     * Returns the DList<Song>
      * 
      * @return the DList of songs
      */
@@ -127,7 +127,7 @@ public class MusicReader {
 
 
     /**
-     * returns the array list of students
+     * Returns the array list of students
      * 
      * @return the array list of students
      */
