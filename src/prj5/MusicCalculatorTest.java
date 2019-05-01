@@ -270,6 +270,7 @@ public class MusicCalculatorTest extends TestCase {
         String[] preferences2 = new String[2];
         String[] preferences3 = new String[3];
         String[] preferences4 = new String[4];
+        String[] preferences5 = new String[5];
 
         preferences1[0] = "yes";
         preferences1[1] = "yes";
@@ -282,6 +283,9 @@ public class MusicCalculatorTest extends TestCase {
 
         preferences4[0] = "no";
         preferences4[1] = "no";
+        
+        preferences5[0] = "";
+        preferences5[1] = "";
 
         Student one = new Student("Other Engineering", "Southwest", "art",
             preferences1);
@@ -292,12 +296,14 @@ public class MusicCalculatorTest extends TestCase {
             "art", preferences3);
         Student four = new Student("Computer Science",
             "Outside of United States", "sports", preferences4);
+        Student five = new Student("Math or CMDA", "Southwest", "music", preferences5);
 
         ArrayList<Student> testStudents = new ArrayList<Student>();
         testStudents.add(one);
         testStudents.add(two);
         testStudents.add(three);
         testStudents.add(four);
+        testStudents.add(five);
         MusicReader mr = new MusicReader("MusicSurveyDataTest2.csv",
             "SongListTest2.csv");
         mc = new MusicCalculator(testStudents, mr.getSongs());
@@ -327,7 +333,7 @@ public class MusicCalculatorTest extends TestCase {
         int[] z = mc.getPercents(mc.getSongs().get(0), "Region");
 
         for (int i = 0; i < 8; i++) {
-            assertEquals(x[i], test1[i]);
+            assertEquals(x[i], test1[i]);        
             assertEquals(y[i], test2[i]);
             assertEquals(z[i], test3[i]);
         }
@@ -349,29 +355,26 @@ public class MusicCalculatorTest extends TestCase {
         int[] test1 = new int[8];
         int[] test2 = new int[8];
         int[] test3 = new int[8];
+
         
-        test2[0] = 33;
         
-        test3[1] = 33;
-        test1[2] = 50;
-        test2[2] = 33;
+        int[] x = mc.getPercents(mc.getSongs().get(3), "Hobby");
+        int[] y = mc.getPercents(mc.getSongs().get(3), "Major");
+        int[] z = mc.getPercents(mc.getSongs().get(3), "Region");
         
-        test2[4] = 66;
+        test2[4] = 50;
         
-        test3[5] = 50;
-        
-        test1[6] = 50;
-        test2[6] = 33;
+        test3[5] = 20;
         
         test1[7] = 100;
         
-        int[] x = mc.getPercents(mc.getSongs().get(0), "Hobby");
-        int[] y = mc.getPercents(mc.getSongs().get(0), "Major");
-        int[] z = mc.getPercents(mc.getSongs().get(0), "Region");
-        
         for (int i = 0; i < 8; i++) {
+            System.out.println(i);
+            System.out.println(x[i]);
             assertEquals(x[i], test1[i]);
+            System.out.println(y[i]);
             assertEquals(y[i], test2[i]);
+            System.out.println(z[i]);
             assertEquals(z[i], test3[i]);
         }
     }
