@@ -68,7 +68,9 @@ public class MusicCalculator {
      * e.g. "major, hobby, region"
      * 
      * @param s
-     *            the song being asked about
+     *            - the song being asked about
+     * @param attribute
+     *            - the attribute of a person (hobby/major/state)
      * @return the attribute we are looking to search for
      */
     public int[] getPercents(Song s, String attribute) {
@@ -122,7 +124,6 @@ public class MusicCalculator {
                     break;
                 }
                 case 2: {
-
                     if (!(student.getPreferences()[s.getIndex() * 2]).equals(
                         "")) {
                         artCountHeard++;
