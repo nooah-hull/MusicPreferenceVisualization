@@ -106,7 +106,7 @@ public class Song {
 
 
     /**
-     * converts all the skill rankings into a readable string
+     * Converts all the skill rankings into a readable string
      *
      * @return a string of all the skills
      */
@@ -121,7 +121,7 @@ public class Song {
 
 
     /**
-     * compares the specific aspects of each song
+     * Compares the specific aspects of each song
      * 
      * @param obj
      *            this is the song to be compared
@@ -149,7 +149,7 @@ public class Song {
 
 
     /**
-     * compares two songs based on a provided parameter
+     * Compares two songs based on a provided parameter
      * 
      * @param other
      *            the other song

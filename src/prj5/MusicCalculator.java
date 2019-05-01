@@ -109,7 +109,6 @@ public class MusicCalculator {
                         if (student.getPreferences()[s.getIndex() * 2]
                             .equalsIgnoreCase("Yes")) {
                             readHeard++;
-
                         }
                     }
                     if (!(student.getPreferences()[s.getIndex() * 2 + 1])
@@ -130,7 +129,6 @@ public class MusicCalculator {
                         if (student.getPreferences()[s.getIndex() * 2]
                             .equalsIgnoreCase("Yes")) {
                             artHeard++;
-
                         }
                     }
                     if (!(student.getPreferences()[s.getIndex() * 2 + 1])
@@ -144,14 +142,12 @@ public class MusicCalculator {
                     break;
                 }
                 case 3: {
-
                     if (!(student.getPreferences()[s.getIndex() * 2]).equals(
                         "")) {
                         sportsCountHeard++;
                         if (student.getPreferences()[s.getIndex() * 2]
                             .equalsIgnoreCase("Yes")) {
                             sportsHeard++;
-
                         }
                     }
                     if (!(student.getPreferences()[s.getIndex() * 2 + 1])
@@ -171,7 +167,6 @@ public class MusicCalculator {
                         if (student.getPreferences()[s.getIndex() * 2]
                             .equalsIgnoreCase("Yes")) {
                             musicHeard++;
-
                         }
                     }
                     if (!(student.getPreferences()[s.getIndex() * 2 + 1])
