@@ -120,7 +120,6 @@ public class GUI {
         colorNames[9] = "Southeastern US";
         colorNames[10] = "Other US";
         colorNames[11] = "Other";
-        
 
         // Runs update methods
         currNode = musCalc.getSongs().getNodeAtIndex(0);
@@ -129,6 +128,7 @@ public class GUI {
         checkButtons();
     }
 
+
     /**
      * 
      */
@@ -136,24 +136,25 @@ public class GUI {
         prev.enable();
         next.enable();
         Node<Song> temp = currNode;
-        for(int i = 0; i < 9; i++) {
-            if(temp.previous() == null) {
+        for (int i = 0; i < 9; i++) {
+            if (temp.previous() == null) {
                 prev.disable();
                 break;
             }
             temp = temp.previous();
         }
-        
+
         temp = currNode;
-        for(int i = 0; i < 9; i++) {
-            if(temp.next() == null) {
+        for (int i = 0; i < 9; i++) {
+            if (temp.next() == null) {
                 next.disable();
                 break;
             }
             temp = temp.next();
         }
     }
-    
+
+
     /**
      * 
      * @param additional
@@ -163,7 +164,8 @@ public class GUI {
             currNode = currNode.previous();
         }
     }
-    
+
+
     /**
      * runs when previous is clicked
      * 
@@ -271,12 +273,13 @@ public class GUI {
      * @param buttonIn
      *            - the button that is pressed
      */
-    public void clickedRegion(Button buttonIn) {    
+    public void clickedRegion(Button buttonIn) {
         currNodeBacktrack(0);
         curRep = "Region";
         standardRefresh();
     }
-    
+
+
     /**
      * 
      */
@@ -285,7 +288,8 @@ public class GUI {
         barX = 150;
         songY = 20;
     }
-    
+
+
     /**
      * 
      */
@@ -294,6 +298,7 @@ public class GUI {
         createGlyphPage(curRep);
         updateLegend(curRep);
     }
+
 
     /**
      * runs when quit is pressed
@@ -304,6 +309,7 @@ public class GUI {
     public void clickedQuit(Button buttonIn) {
         System.exit(0);
     }
+
 
     /**
      * 
@@ -317,6 +323,7 @@ public class GUI {
             currNode = currNode.next();
         }
     }
+
 
     /**
      * 
@@ -361,9 +368,9 @@ public class GUI {
         // adds the four colored preference bars
         int[] nums = musCalc.getPercents(songIn, attribute);
         for (int i = 0; i < colors.length; i++) {
-            window.addShape(new Shape(barX + barW / 2 - nums[i], songArtist.getY() + elementGap + (i
-                + 1) * songArtist.getHeight(), nums[i] + nums[i + 4], songArtist.getHeight(),
-                colors[i]));
+            window.addShape(new Shape(barX + barW / 2 - nums[i], songArtist
+                .getY() + elementGap + (i + 1) * songArtist.getHeight(), nums[i]
+                    + nums[i + 4], songArtist.getHeight(), colors[i]));
         }
         barX = barX + 350;
         glyphTracker++;
@@ -396,19 +403,21 @@ public class GUI {
 
         // adds the three colored words below the hobby legend
         int start = 0;
-        if(attribute.equals("Hobby")) {
+        if (attribute.equals("Hobby")) {
             start = 0;
-        } else if (attribute.equals("Major")) {
+        }
+        else if (attribute.equals("Major")) {
             start = 4;
-        } else {
+        }
+        else {
             start = 8;
         }
 
         TextShape tempShape = null;
         for (int i = start; i < start + 4; i++) {
-            tempShape = new TextShape(0, legend.getY() + elementGap + ((i % 4 + 1)
-                * legend.getHeight()) + (i % 4 + 1 * elementGap), colorNames[i],
-                colors[i % 4]);
+            tempShape = new TextShape(0, legend.getY() + elementGap + ((i % 4
+                + 1) * legend.getHeight()) + (i % 4 + 1 * elementGap),
+                colorNames[i], colors[i % 4]);
             tempShape.setX(referenceShape.getX() + (referenceShape.getWidth()
                 / 2) - (tempShape.getWidth() / 2));
             window.addShape(tempShape);

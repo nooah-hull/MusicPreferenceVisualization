@@ -30,8 +30,7 @@ public class Input {
      * @throws MPVDataException
      *             if data in files is incorrect
      */
-    public static void main(String[] args)
-        throws FileNotFoundException{
+    public static void main(String[] args) throws FileNotFoundException {
         if (args.length != 2) {
             new MusicReader("MusicSurveyData.csv", "SongList.csv");
         }

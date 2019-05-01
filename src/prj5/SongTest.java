@@ -1,6 +1,6 @@
 package prj5;
-import student.TestCase;
 
+import student.TestCase;
 
 // * // Virginia Tech Honor Code Pledge:
 // * //
@@ -10,13 +10,12 @@ import student.TestCase;
 // * // do.
 // * // -- Brock Morgan (brockmorgan)
 
-
 /**
  * Tests the methods of the Song class
  *
  * @author <Brock Morgan> <brockmorgan>
  * 
- * @version <4/9/2019> 
+ * @version <4/9/2019>
  */
 public class SongTest extends TestCase {
     private Song song;
@@ -89,10 +88,9 @@ public class SongTest extends TestCase {
 
         assertFalse(song2.equals(doggie));
 
-
         Song tempSong1 = new Song("one", "two", 1, "three", 2);
         Song tempSong2 = new Song("one", "two", 2, "three", 2);
-        
+
         assertFalse(tempSong1.equals(tempSong2));
     }
 

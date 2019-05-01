@@ -18,7 +18,6 @@ import student.TestCase;
  */
 public class MusicCalculatorTest extends TestCase {
     private MusicCalculator mc;
-    
 
 
     /**
@@ -40,7 +39,6 @@ public class MusicCalculatorTest extends TestCase {
         songs.add(new Song("a", "Katy Perry", 2011, "pop", 4));
         songs.add(new Song("a", "Katy Perry", 2011, "pop", 4));
         songs.add(new Song("a", "Katy Perry", 2011, "pop", 4));
-        
 
         preferences1 = new String[10];
 
@@ -82,17 +80,17 @@ public class MusicCalculatorTest extends TestCase {
             preferences1));
         students.add(new Student("Engineering", "SouthWestUS", "other",
             preferences1));
-        
 
         mc = new MusicCalculator(students, songs);
 
     }
 
+
     /**
      * tests the songHobbies() method
      */
     public void testSongHobbies() {
-        
+
         Exception e = null;
         try {
             new MusicCalculator(null, null);
@@ -186,8 +184,7 @@ public class MusicCalculatorTest extends TestCase {
      * @throws FileNotFoundException
      *             if the file is not found
      */
-    public void testWithMusicReader()
-        throws FileNotFoundException {
+    public void testWithMusicReader() throws FileNotFoundException {
         new MusicReader("MusicSurveyDataTest2.csv", "SongListTest2.csv");
 
         Exception e = null;
