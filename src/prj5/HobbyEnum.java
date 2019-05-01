@@ -7,7 +7,7 @@ package prj5;
 // do.
 // -- Brock Morgan (brockmorgan)
 /**
- * A enum class for the student hobbies
+ * An enum class for the student hobbies
  * 
  * @author <Brock Morgan> <brockmorgan>
  * @version <04/15/2019>
