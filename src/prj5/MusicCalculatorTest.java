@@ -197,4 +197,7 @@ public class MusicCalculatorTest extends TestCase {
         assertTrue(e instanceof IllegalArgumentException);
     }
 
+    /**
+     * 
+     */
 }

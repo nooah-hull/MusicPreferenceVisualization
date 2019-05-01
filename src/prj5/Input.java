@@ -18,13 +18,13 @@ public class Input {
 
     /**
      * If two arguments have been provided, we will use those as our input
-     * filenames. Otherwise, instantiate a MusicReader class and provide the
-     * default "SongList2018.csv" and "MusicSurveyData2018.csv" filenames. The
-     * main method should
-     * not catch the exceptions, just let them be thrown.
+     * filenames. Otherwise, instantiate a MusicReader object and provide the
+     * default "SongList2018.csv" and "MusicSurveyData2018.csv" filenames as
+     * inputs. The main method should not catch the exceptions, just let them be
+     * thrown.
      * 
      * @param args
-     *            string array of file names
+     *            String array of file names, should only be length 2
      * @throws FileNotFoundException
      *             if no file is found
      * @throws MPVDataException
