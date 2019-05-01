@@ -196,5 +196,28 @@ public class MusicCalculatorTest extends TestCase {
         }
         assertTrue(e instanceof IllegalArgumentException);
     }
+    
+    /**
+     * tests the caseFinder Method
+     * 
+     */
+    public void testCaseFinder() {
+        assertEquals(mc.caseFinder(HobbyEnum.READ), 1);
+        assertEquals(mc.caseFinder(HobbyEnum.ART), 2);
+        assertEquals(mc.caseFinder(HobbyEnum.SPORTS), 3);
+        assertEquals(mc.caseFinder(HobbyEnum.MUSIC), 4);
+        
+        assertEquals(mc.caseFinder(MajorEnum.COMPUTERSCIENCE), 1);
+        assertEquals(mc.caseFinder(MajorEnum.OTHERENGINEERING), 2);
+        assertEquals(mc.caseFinder(MajorEnum.MATH), 3);
+        assertEquals(mc.caseFinder(MajorEnum.OTHER), 4);
+        
+        assertEquals(mc.caseFinder(StateEnum.NORTHEASTUS), 1);
+        assertEquals(mc.caseFinder(StateEnum.SOUTHEASTUS), 2);
+        assertEquals(mc.caseFinder(StateEnum.RESTOFUS), 3);
+        assertEquals(mc.caseFinder(StateEnum.OTHER), 4);
+        
+        assertEquals(mc.caseFinder(1), 0);
+    }
 
 }
