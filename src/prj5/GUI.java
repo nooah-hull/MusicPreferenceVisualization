@@ -28,7 +28,7 @@ public class GUI {
     private Button prev, sortArtist, sortTitle, sortYear, sortGenre, next,
         hobby, major, region, quit;
     private int barX, songY, barW, barH, elementGap, legendW, legendH, legendT,
-        legendLeftX, legendTopY, glyphTracker;
+        legendLeftX, legendTopY, glyphTracker, wierdXOffset, wierdYOffset;
     private Color[] colors;
     private String[] colorNames;
     private Node<Song> currNode;
@@ -96,8 +96,10 @@ public class GUI {
         legendW = 150;
         legendH = 225;
         legendT = 4;
-        legendLeftX = window.getWidth() - elementGap - legendW - 38;
-        legendTopY = window.getHeight() - elementGap - legendH - 180;
+        wierdXOffset = 38;
+        wierdYOffset = 180;
+        legendLeftX = window.getWidth() - elementGap - legendW - wierdXOffset;
+        legendTopY = window.getHeight() - elementGap - legendH - wierdYOffset;
 
         // assigns color array for use in the visualization bars
         colors = new Color[4];
@@ -330,8 +332,8 @@ public class GUI {
      * @return
      */
     public boolean checkGlyph() {
-        if (barX + 250 > window.getWidth() && songY + 250 + 180 > window
-            .getHeight()) {
+        if (barX + 250 > window.getWidth() && songY + 250
+            + wierdYOffset > window.getHeight()) {
             return false;
         }
 
@@ -390,9 +392,9 @@ public class GUI {
         window.addShape(new Shape(legendLeftX, legendTopY, legendT, legendH,
             Color.BLACK));
         window.addShape(new Shape(legendLeftX, window.getHeight() - elementGap
-            - 180, legendW, legendT, Color.BLACK));
-        window.addShape(new Shape(window.getWidth() - elementGap - 38 - legendT,
-            legendTopY, legendT, legendH, Color.BLACK));
+            - wierdYOffset, legendW, legendT, Color.BLACK));
+        window.addShape(new Shape(window.getWidth() - elementGap - wierdXOffset
+            - legendT, legendTopY, legendT, legendH, Color.BLACK));
 
         // adds the hobby legend text below the bars
         TextShape legend = new TextShape(0, referenceShape.getY()
