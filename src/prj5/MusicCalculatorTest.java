@@ -283,7 +283,7 @@ public class MusicCalculatorTest extends TestCase {
 
         preferences4[0] = "no";
         preferences4[1] = "no";
-        
+
         preferences5[0] = "";
         preferences5[1] = "";
 
@@ -296,7 +296,8 @@ public class MusicCalculatorTest extends TestCase {
             "art", preferences3);
         Student four = new Student("Computer Science",
             "Outside of United States", "sports", preferences4);
-        Student five = new Student("Math or CMDA", "Southwest", "music", preferences5);
+        Student five = new Student("Math or CMDA", "Southwest", "music",
+            preferences5);
 
         ArrayList<Student> testStudents = new ArrayList<Student>();
         testStudents.add(one);
@@ -333,7 +334,7 @@ public class MusicCalculatorTest extends TestCase {
         int[] z = mc.getPercents(mc.getSongs().get(0), "Region");
 
         for (int i = 0; i < 8; i++) {
-            assertEquals(x[i], test1[i]);        
+            assertEquals(x[i], test1[i]);
             assertEquals(y[i], test2[i]);
             assertEquals(z[i], test3[i]);
         }
@@ -341,7 +342,7 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
-<<<<<<< HEAD
+     * <<<<<<< HEAD
      * tests getPercents when there are blanks in the survey data
      * 
      * @throws FileNotFoundException
@@ -351,23 +352,21 @@ public class MusicCalculatorTest extends TestCase {
         MusicReader mr = new MusicReader("MusicSurveyDataTest1.csv",
             "SongListTest1.csv");
         mc = new MusicCalculator(mr.getStudents(), mr.getSongs());
-        
+
         int[] test1 = new int[8];
         int[] test2 = new int[8];
         int[] test3 = new int[8];
 
-        
-        
         int[] x = mc.getPercents(mc.getSongs().get(3), "Hobby");
         int[] y = mc.getPercents(mc.getSongs().get(3), "Major");
         int[] z = mc.getPercents(mc.getSongs().get(3), "Region");
-        
+
         test2[4] = 50;
-        
+
         test3[5] = 20;
-        
+
         test1[7] = 100;
-        
+
         for (int i = 0; i < 8; i++) {
             System.out.println(i);
             System.out.println(x[i]);
@@ -382,9 +381,10 @@ public class MusicCalculatorTest extends TestCase {
 
     /**
      * tests casefinder 0
-=======
+     * =======
      * Tests caseFinder 0
->>>>>>> branch 'master' of https://github.com/nooah-hull/MusicPreferenceVisualization.git
+     * >>>>>>> branch 'master' of
+     * https://github.com/nooah-hull/MusicPreferenceVisualization.git
      */
     public void testCaseFinder0() {
         assertEquals(0, mc.caseFinder("hello my dude"));

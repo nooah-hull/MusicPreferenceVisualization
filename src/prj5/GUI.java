@@ -411,7 +411,7 @@ public class GUI {
             - (legend.getWidth() / 2));
         window.addShape(legend);
 
-        // adds the three colored words below the hobby legend
+        // prepares the start int for the attribute names array (colorNames)
         int start = 0;
         if (attribute.equals("Hobby")) {
             start = 0;
@@ -423,6 +423,7 @@ public class GUI {
             start = 8;
         }
 
+        // adds the three colored words below the hobby legend
         TextShape tempShape = null;
         for (int i = start; i < start + 4; i++) {
             tempShape = new TextShape(0, legend.getY() + elementGap + ((i % 4
