@@ -246,7 +246,8 @@ public class MusicCalculatorTest extends TestCase {
             assertEquals(testHobby[i], x[i]);
         }
     }
-    
+
+
     /**
      * tests the getPercentswhen it should be whack
      */
@@ -331,7 +332,8 @@ public class MusicCalculatorTest extends TestCase {
             assertEquals(z[i], test3[i]);
         }
     }
-    
+
+
     /**
      * tests casefinder 0
      */
@@ -358,7 +360,8 @@ public class MusicCalculatorTest extends TestCase {
         }
         assertTrue(e instanceof IllegalArgumentException);
     }
-    
+
+
     /**
      * tests the caseFinder Method
      * 
@@ -368,17 +371,17 @@ public class MusicCalculatorTest extends TestCase {
         assertEquals(mc.caseFinder(HobbyEnum.ART), 2);
         assertEquals(mc.caseFinder(HobbyEnum.SPORTS), 3);
         assertEquals(mc.caseFinder(HobbyEnum.MUSIC), 4);
-        
+
         assertEquals(mc.caseFinder(MajorEnum.COMPUTERSCIENCE), 1);
         assertEquals(mc.caseFinder(MajorEnum.OTHERENGINEERING), 2);
         assertEquals(mc.caseFinder(MajorEnum.MATH), 3);
         assertEquals(mc.caseFinder(MajorEnum.OTHER), 4);
-        
+
         assertEquals(mc.caseFinder(StateEnum.NORTHEASTUS), 1);
         assertEquals(mc.caseFinder(StateEnum.SOUTHEASTUS), 2);
         assertEquals(mc.caseFinder(StateEnum.RESTOFUS), 3);
         assertEquals(mc.caseFinder(StateEnum.OTHER), 4);
-        
+
         assertEquals(mc.caseFinder(1), 0);
         assertEquals(mc.caseFinder("test1"), 0);
     }
