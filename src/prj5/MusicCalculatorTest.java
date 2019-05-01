@@ -335,6 +335,48 @@ public class MusicCalculatorTest extends TestCase {
 
 
     /**
+     * tests getPercents when there are blanks in the survey data
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     */
+    public void testGetPercentsBlanks() throws FileNotFoundException {
+        MusicReader mr = new MusicReader("MusicSurveyDataTest1.csv",
+            "SongListTest1.csv");
+        mc = new MusicCalculator(mr.getStudents(), mr.getSongs());
+        
+        int[] test1 = new int[8];
+        int[] test2 = new int[8];
+        int[] test3 = new int[8];
+        
+        test2[0] = 33;
+        
+        test3[1] = 33;
+        test1[2] = 50;
+        test2[2] = 33;
+        
+        test2[4] = 66;
+        
+        test3[5] = 50;
+        
+        test1[6] = 50;
+        test2[6] = 33;
+        
+        test1[7] = 100;
+        
+        int[] x = mc.getPercents(mc.getSongs().get(0), "Hobby");
+        int[] y = mc.getPercents(mc.getSongs().get(0), "Major");
+        int[] z = mc.getPercents(mc.getSongs().get(0), "Region");
+        
+        for (int i = 0; i < 8; i++) {
+            assertEquals(x[i], test1[i]);
+            assertEquals(y[i], test2[i]);
+            assertEquals(z[i], test3[i]);
+        }
+    }
+
+
+    /**
      * tests casefinder 0
      */
     public void testCaseFinder0() {
