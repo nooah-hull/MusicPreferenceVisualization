@@ -110,9 +110,9 @@ public class MusicCalculatorTest extends TestCase {
 
         DList<Song> s2 = mc.getSongs();
 
-        assertEquals(s2.get(1), new Song("Enter Sandman", "Metallica", 1991,
+        assertEquals(s2.get(0), new Song("Enter Sandman", "Metallica", 1991,
             "rock", 0));
-        assertEquals(s2.get(0), new Song("Boot Scootin' Boogie",
+        assertEquals(s2.get(1), new Song("Boot Scootin' Boogie",
             "Brooks and Dunn", 1991, "country", 3));
         assertEquals(s2.get(2), new Song("Gangsta's Paradise", "Coolio", 1995,
             "R&B", 2));
